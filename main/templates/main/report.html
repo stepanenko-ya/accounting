@@ -1,0 +1,46 @@
+{% extends 'main/main.html' %}
+
+{% block report  %}
+    <div class="common2">
+        <form enctype="multipart/form-data" action="" method="post">
+        {% csrf_token %}
+        <div class="common">
+
+            <div class="date">
+                {%  if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+                <input class="date_input" type="date" id="start" name="date_start">
+                <input class="date_input" type="date" id="stop" name="date_stop">
+                <input class="form-button" type="submit" value="Сформувати звіт">
+            </div>
+        </div>
+
+    </form>
+    </div>
+    {% if result %}
+
+        <table class="table">
+            <caption class="table_name">{{report }}</caption>
+            <tr class="table th">
+                <td class="table td">Назва товару</td>
+                <td class="table td">Кількість проданого товару</td>
+                <td class="table td">Прибуток з продажу товару</td>
+
+            </tr>
+
+                {% for result_element in result.items  %}
+                    <tr class="table th">
+                    <td>{{ result_element.0 }}</td>
+                    <td>{{ result_element.1.quantity }}</td>
+                    <td>{{ result_element.1.profit }}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+
+    {% endif %}
+
+
+
+
+{% endblock %}

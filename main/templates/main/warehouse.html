@@ -1,0 +1,39 @@
+{% extends 'main/main.html' %}
+
+{% block warehouse  %}
+    <div class="common">
+
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            <div class="date">
+                {%  if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+                <input class="date_input" type="date" id="start" name="date_start">
+                <input class="form-button" type="submit" value="Сформувати звіт">
+            </div>
+        </form>
+    </div>
+
+
+
+    {% if results %}
+    <div class="common2">
+        <table class="table">
+        <caption class="table_name">{{ table_name }}</caption>
+        <tr class="table th">
+            <td class="table td">Назва товару</td>
+            <td class="table td">Кількість товару</td>
+        </tr>
+        {% for result in results.items  %}
+            <tr>
+                <td>{{ result.0 }}</td>
+                <td>{{ result.1 }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+    {%  endif  %}
+
+{% endblock %}

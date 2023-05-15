@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="main">
+    <div class="links"><a class="href"  href="{% url 'common' %}">Створити прибуткову накладну</a></div>
+    <div class="links"><a class="href" href="{% url 'sale' %}">Створити видаткову накладну</a></div>
+    <div class="links"><a class="href" href="{% url 'report' %}">Створити звіт</a></div>
+    <div class="links"><a class="href" href="{% url 'warehouse' %}">Склад товарів</a></div>
+
+</div>
+
+
+
+{% block arrival %}
+{% endblock %}
+{% block sale %}
+{% endblock %}
+{% block report  %}
+{% endblock %}
+
+{% block warehouse %}
+{% endblock %}
+
+</body>
+</html>

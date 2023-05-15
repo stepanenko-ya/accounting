@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+}
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+}
+.table td {
+    font-weight: 900;
+    border: 1px solid #dddddd;
+    padding: 5px;
+    width: 290px;
+
+}
+
+.input {
+    padding: 5px;
+    width: 300px;
+}
+.input2 {
+    padding: 5px;
+    width: 290px;
+}
+
+.input3 {
+    padding: 5px;
+    width: 286px;
+}
+.add_inputs {
+    padding-top: 13px;
+    text-align: center;
+    background: #3e859a;
+    font-weight: bold;
+    color: #efefef;
+    font-stretch: revert;
+    margin-right: 150px;
+
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    font-size: large;
+    border: 1px solid #efefef;
+}
+
+
+.form-button {
+    font-weight: bold;
+    color: #efefef;
+    font-stretch: revert;
+    height: 50px;
+    width: 178px;
+    background: #f9700cb0;
+    /*background: #82a159;*/
+    border-radius: 5px;
+    font-size: large;
+    border: 1px solid #efefef;
+
+}
+.table_name{
+    font-size: 20px;
+    font-weight :bold;
+    font-style: oblique;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+
+
+.invoice_number {
+    width: 130px;
+    border-radius: 5px;
+    border: 1px solid #efefef;
+}
+
+
+
+.links {
+    margin-left: auto;
+    margin-right: auto;
+    width: 23%;
+    background: #3e859a;
+    border-radius: 10px;
+    border: 2px solid #efefef;
+    height: 32px;
+    padding: 10px;
+    content: normal;
+    text-align: center;
+    display:inline-block;
+}
+
+.href {
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    color: #efefef;
+    font-stretch: revert;
+    font-size: larger;
+}
+
+
+.error {
+    font-weight: bold;
+    white-space: pre;
+    color: #ea0808;
+}
+
+.message {
+    font-weight: bold;
+    white-space: pre;
+    color: #ea0808;}
+
+.main {
+    padding:25px;
+    width: 100%;
+    height: 46px;
+    background: #aabbc173;
+}
+
+
+.center {
+    display: flex;
+}
+.block{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.date {
+
+    text-align: center;
+}
+
+.date_input {
+
+    font-stretch: revert;
+    width: 178px;
+    border-radius: 5px;
+    font-size: large;
+    border: 1px solid #efefef;
+    height: 50px;
+}
+.common {
+    padding: 40px 0;
+    background: #3e859a8f;
+    width: 831px;
+    border-radius: 12px;
+    margin-top: 177px;
+    margin-left: 449px;
+
+}
+
+.common2 {
+
+    padding: 40px 0;
+    border-radius: 12px;
+    margin-top: 17px;
+
+}

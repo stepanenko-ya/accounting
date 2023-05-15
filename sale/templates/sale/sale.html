@@ -1,0 +1,77 @@
+{% extends 'main/main.html' %}
+
+{% block sale %}
+    <div class="block">
+    {% if  errors %}
+        <p class="error">Недостатньо товарів на складі для проведення накладної </p>
+        {% for error in errors %}
+            <p> Товар "{{ error.0 }}" - недостатньо {{ error.1 }} шт</p>
+        {% endfor %}
+    {% endif %}
+    {%  if message %}
+        <p class="message">{{ message }}</p>
+    {% else %}
+        <div class="block">
+            <form enctype="multipart/form-data" action="" method="post">
+                {% csrf_token %}
+
+                <table class="table">
+                    <caption class="table_name">{{ title }}</caption>
+                    <tr class="table th ">
+                        <td class="table td">Назва товару</td>
+                        <td class="table td">Кількість товару</td>
+                        <td class="table td">Ціна товару</td>
+                    </tr>
+                </table>
+                <div class="frame">
+                    <div id="product-list">
+                        <div style="display: flex">
+                            <select name="item" class="input">
+                                {% for item in items %}
+                                    <option> {{ item }} </option>
+                                {% endfor %}
+                            </select>
+                            <input id="newQuantityInput" type="text" name="newQuantityInput" value="" placeholder='Кількість'
+                                   class="input3">
+                            <input id="price" type="text" name="price" value="" placeholder='Ціна' class="input2">
+
+                        </div>
+                    </div>
+                    <br/><br/><br/>
+                    <div class="center">
+                        <div class="add_inputs" onclick="buttonExportExcel(this)">Додати товар</div>
+                        <input class="form-button" type="submit" value="Створити">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        </div>
+        <script>function buttonExportExcel(obj) {
+            const newDivInput = document.createElement('div');
+            newDivInput.style.display='flex'
+            const originalElement = document.querySelector('select');
+            const duplicateElement = originalElement.cloneNode(true);
+            newDivInput.append(duplicateElement);
+
+
+            const newQuantityInput = document.createElement('input');
+            newQuantityInput.type = 'text';
+            newQuantityInput.name = 'newQuantityInput';
+            newQuantityInput.placeholder = 'Кількість';
+            newQuantityInput.className = 'input3';
+            newDivInput.appendChild(newQuantityInput);
+
+
+            const newPriceInput = document.createElement('input');
+            newPriceInput.type = 'text';
+            newPriceInput.name = 'price';
+            newPriceInput.placeholder = 'Ціна';
+            newPriceInput.className = 'input2';
+            newDivInput.append(newPriceInput)
+
+            document.getElementById('product-list').appendChild(newDivInput);
+        };
+        </script>
+    {% endif %}
+{%  endblock %}
